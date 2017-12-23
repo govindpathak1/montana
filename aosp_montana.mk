@@ -16,21 +16,37 @@
 
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/motorola/cedric/full_cedric.mk)
+$(call inherit-product, device/motorola/montana/full_montana.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # for specific
-$(call inherit-product, vendor/motorola/cedric/cedric-vendor.mk)
-
+$(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
+# Inherit some common AOSP stuff.
+TARGET_ARCH := arm64
+TARGET_DENSITY := xxhdpi
+TARGET_BOOT_ANIMATION_RES := 1080
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cedric
-PRODUCT_NAME := lineage_cedric
+PRODUCT_DEVICE := montana
+PRODUCT_NAME := aosp_montana
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT=google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys \
+    PRIVATE_BUILD_DESC="potter-7.0/NPNS25.137-33-11/11:user/release-keys" \
+    PRODUCT_NAME="Moto G5s "
+
+
+
+
+
+
+
+
+

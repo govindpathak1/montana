@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-# Inherit from cedric device
-$(call inherit-product, device/motorola/cedric/device.mk)
+# Inherit from montanadevice
+$(call inherit-product, device/motorola/montana/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cedric
-PRODUCT_NAME := full_cedric
-PRODUCT_MODEL := Moto G5
+PRODUCT_DEVICE := montana
+PRODUCT_NAME := full_montana
+PRODUCT_MODEL := Moto G5s
